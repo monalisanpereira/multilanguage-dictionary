@@ -2,6 +2,7 @@ import { createConnection } from "typeorm/globals.js";
 import { Entry } from "./entities/Entry";
 import express from "express";
 import 'dotenv/config';
+import { entriesRouter } from "./routes/entries";
 
 const app = express();
 
@@ -20,6 +21,7 @@ const main = async () => {
         
         const server_port = process.env.SERVER_PORT as unknown as number
         app.use(express.json());
+        app.use(entriesRouter);
         app.listen(server_port, () => {
             console.log(`Server listening on port ${server_port}...`)
         })

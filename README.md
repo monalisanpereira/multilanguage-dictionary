@@ -1,2 +1,2 @@
 # todo
-- add/configure dotenv
+- fix update entry?
